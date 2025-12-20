@@ -65,7 +65,7 @@ nanobind_add_module(soxr_ext STABLE_ABI FREE_THREADED NB_STATIC
     ${CSOXR_VER_C}
 )
 
-if (NOT CMAKE_CROSSCOMPILING)
+if (CMAKE_CROSSCOMPILING)
     # nanobind's stub generation requires importing the module, so skip it when cross-compiling
     nanobind_add_stub(soxr_ext_stub
         MODULE soxr_ext
